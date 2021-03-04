@@ -34,9 +34,7 @@ In each folder, `app_qc`, `app_kernel` and `maximal_check`, there is a Makefile.
 **Workflow A: to Mine Maximal Quasi-Cliques Directly**
   1. Quasi-clique mining:
   
-      go to app_qc folder, then run ``./run [input_data] [thread_num] [gamma] [min_size] [time_split_threshold]``
-
-      where: 
+      Go to app_qc folder, then run ``./run [input_data] [thread_num] [gamma] [min_size] [time_split_threshold]``, where: 
         - input_data: input graph file
         - thread_num: number of threads. We call them compers as well
         - gamma: user-specified minimum degree threshold
