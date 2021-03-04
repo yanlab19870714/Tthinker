@@ -8,7 +8,7 @@ We target a **single-machine multi-core** environment, since a distributed clust
   <img src="imgs/img3.PNG" width="450" height="300" />
 </p>
 
-Previously, we developed a distributed solution which can be found [here](https://github.com/yanlab19870714/gthinkerQC), which is built on top of the [G-thinker](http://bit.ly/gthinker) system.
+Previously, we developed a distributed solution which can be found <a href="https://github.com/yanlab19870714/gthinkerQC" target="_blank">here</a>, which is built on top of the [G-thinker](http://bit.ly/gthinker) system.
 
 ## Program Checklist
 - **The `system` folder**: it contains the code for our T-thinker engine, which is a task-based general-purpose framework for writing parallel programs. In the folder, `worker.h` is the main thread that creates other computing threads (aka. compers) to work on tasks. When task queues are near empty, T-thinker will generate new tasks from data items to refill the queues; while if too many tasks are created (e.g. due to decomposing a big task), tasks will be spilled to local disk to keep memory bounded, and these tasks will be loaded back for processing when task queues have space. The figure below shows the tuned system parameters for our task queues:
