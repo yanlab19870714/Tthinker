@@ -31,7 +31,7 @@ Previously, we developed a distributed solution which can be found [here](https:
 In each folder, `app_qc`, `app_kernel` and `maximal_check`, there is a Makefile. Just enter each folder and use the command `make` to compile, and a program named `run` will be generated.
 
 ## Execution
-Workflow A: to Mine Maximal Quasi-Cliques Directly
+**Workflow A: to Mine Maximal Quasi-Cliques Directly**
   1. Quasi-cliques mining: go to app_qc folder, then run ```./run [input_data] [thread_num] [gamma] [min_size] [time_split_threshold]```
 
       where: 
@@ -47,7 +47,7 @@ Workflow A: to Mine Maximal Quasi-Cliques Directly
       - Aggregate all quasi-cliques outputs into one file: ```cat output_* > results```
       - Remove non-maximal quasi-cliques: ```../maximal_check/quasiCliques results max_results```
 
-Workflow B: to Mine Maximal Quasi-Cliques Using Kernels:
+**Workflow B: to Mine Maximal Quasi-Cliques Using Kernels**
   1. Mine large quasi-cliques by first mining dense parts that are faster to find using gamma prime (gamma'), where gamma' > gamma, using ```./run [input_data] [thread_num] **[gamma']** [min_size] [time_split_threshold]```
 
   2. Postprocessing: 
