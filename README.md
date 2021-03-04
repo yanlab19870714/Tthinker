@@ -11,21 +11,21 @@ We target a **single-machine multi-core** environment, since a distributed clust
 Previously, we developed a distributed solution which can be found [here](https://github.com/yanlab19870714/gthinkerQC), which is built on top of the [G-thinker](http://bit.ly/gthinker) system.
 
 ## Program Checklist
-- **The `system` folder**: it contains the code for our T-thinker engine, which is a task-based general-purpose framework for writing parallel programs. In the folder, `worker.h` is the main thread that creates other computing threads (aka. compers) to work on tasks. When task queues are near empty, T-thinker will generate new tasks from data items to refill the queues; while if too many tasks are created (e.g. due to decomposing a big task), tasks will be spilled to local disk to keep memory bounded, and these tasks will be loaded back for processing when task queues have space. The figure below shows the tuned system parameters for our task queues:
+- **The `system` folder:** it contains the code for our T-thinker engine, which is a task-based general-purpose framework for writing parallel programs. In the folder, `worker.h` is the main thread that creates other computing threads (aka. compers) to work on tasks. When task queues are near empty, T-thinker will generate new tasks from data items to refill the queues; while if too many tasks are created (e.g. due to decomposing a big task), tasks will be spilled to local disk to keep memory bounded, and these tasks will be loaded back for processing when task queues have space. The figure below shows the tuned system parameters for our task queues:
 
 <p align="center">
 <img src="imgs/img2.PNG" width="450" height="300" />
 </p>
 
-- **The `app_qc` folder**: this is the application code for mining maximal quasi-cliques, which runs on top of T-thinker. The figure below shows an example of the second largest quasi-clique for the [Arxiv GR-QC](https://snap.stanford.edu/data/ca-GrQc.html) dataset (arXiv collaboration network) found by our application code.
+- **The `app_qc` folder:** this is the application code for mining maximal quasi-cliques, which runs on top of T-thinker. The figure below shows an example of the second largest quasi-clique for the [Arxiv GR-QC](https://snap.stanford.edu/data/ca-GrQc.html) dataset (arXiv collaboration network) found by our application code.
 
 <p align="center">
 <img src="imgs/img1.PNG" width="450" height="300" />
 </p>
 
-- **The `app_kernel` folder**: this is the application code for kernel expansion, which uses the top-*k* maximal quasi-cliques found by `app_qc` as seeds, to grow maximal quasi-cliques with a smaller *γ*. This idea was originally proposed by [Sanei-Mehri et al.](https://arxiv.org/abs/1808.09531) to speed up mining of large quasi-cliques, and we improved the method to avoid redundant search space exploration.
+- **The `app_kernel` folder:** this is the application code for kernel expansion, which uses the top-*k* maximal quasi-cliques found by `app_qc` as seeds, to grow maximal quasi-cliques with a smaller *γ*. This idea was originally proposed by [Sanei-Mehri et al.](https://arxiv.org/abs/1808.09531) to speed up mining of large quasi-cliques, and we improved the method to avoid redundant search space exploration.
 
-- **maximal_check**: This is the postprocessing step, used to remove non-maximal quasi-cliques from the output of `app_qc` and `app_kernel`.
+- **The `maximal_check` folder:** This is the postprocessing step, used to remove non-maximal quasi-cliques from the output of `app_qc` and `app_kernel`.
 
 ## Compilation
 In each folder, `app_qc`, `app_kernel` and `maximal_check`, there is a Makefile. Just enter each folder and use the command `make` to compile, and a program named `run` will be generated.
