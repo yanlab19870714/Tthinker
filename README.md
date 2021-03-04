@@ -36,14 +36,14 @@ In each folder, `app_qc`, `app_kernel` and `maximal_check`, there is a Makefile.
   
   ```./run [input_data] [thread_num] [gamma] [min_size] [time_split_threshold]```
 
-      where: 
-        - input_data: input graph file
-        - thread_num: number of threads. We call them compers as well
-        - gamma: user-specified minimum degree threshold
-        - min_size:  minimum size threshold to return only large quasi-cliques
-        - time_split_threshold: timeout duration threshold
-
-        Example: ```./run grqc_q 5 0.8 10 5```
+ where: 
+      - input_data: input graph file
+      - thread_num: number of threads. We call them compers as well
+      - gamma: user-specified minimum degree threshold
+      - min_size:  minimum size threshold to return only large quasi-cliques
+      - time_split_threshold: timeout duration threshold
+ 
+ Example: ```./run grqc_q 5 0.8 10 5```
 
   2. Postprocessing:
       - Aggregate all quasi-cliques outputs into one file: ```cat output_* > results```
