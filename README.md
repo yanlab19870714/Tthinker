@@ -33,19 +33,19 @@ In each folder, `app_qc`, `app_kernel` and `maximal_check`, there is a Makefile.
 ## Execution
 **Workflow A: to Mine Maximal Quasi-Cliques Directly**
   1. Quasi-clique mining:
-  
-      Go to app_qc folder, then run ``./run [input_data] [thread_num] [gamma] [min_size] [time_split_threshold]``, where: 
+ 
+      Go to `app_qc` folder, and then run `./run [input_data] [thread_num] [gamma] [min_size] [time_split_threshold]`, where: 
         - input_data: input graph file
         - thread_num: number of threads. We call them compers as well
         - gamma: user-specified minimum degree threshold
         - min_size:  minimum size threshold to return only large quasi-cliques
         - time_split_threshold: timeout duration threshold
 
-        Example: ``./run grqc_q 5 0.8 10 5``
+        Example: `./run grqc_q 5 0.8 10 5`
 
   2. Postprocessing:
-      - Aggregate all quasi-cliques outputs into one file: ```cat output_* > results```
-      - Remove non-maximal quasi-cliques: ```../maximal_check/quasiCliques results max_results```
+      - Aggregate all quasi-cliques outputs into one file: `cat output_* > results`
+      - Remove non-maximal quasi-cliques: `../maximal_check/quasiCliques results max_results`
 
 **Workflow B: to Mine Maximal Quasi-Cliques Using Kernels**
   1. Mine large quasi-cliques by first mining dense parts that are faster to find using gamma prime (gamma'), where gamma' > gamma, using ```./run [input_data] [thread_num] **[gamma']** [min_size] [time_split_threshold]```
