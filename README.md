@@ -35,15 +35,16 @@ In each folder, `app_qc`, `app_kernel` and `maximal_check`, there is a Makefile.
   1. Quasi-clique mining:
  
       Go to `app_qc` folder, and then run `./run [input_data] [thread_num] [gamma] [min_size] [time_split_threshold]`, where: 
-        - input_data: input graph file
-        - thread_num: number of threads. We call them compers as well
-        - gamma: user-specified minimum degree threshold
-        - min_size:  minimum size threshold to return only large quasi-cliques
-        - time_split_threshold: timeout duration threshold
+        - input_data: input graph file where the *i*-th row records the adjacency list of Vertex *i*
+        - thread_num: number of threads. We also call each computing thread a comper
+        - gamma: user-specified minimum degree-ratio threshold
+        - min_size: minimum size threshold; each returned result should have at least so many vertices
+        - time_split_threshold: timeout duration threshold. A task running longer than the threshold will decompose into subtasks 
 
-        Example: `./run grqc_q 5 0.8 10 5`
+        Example: `./run input_graph 5 0.8 10 5`
 
   2. Postprocessing:
+      - Each thread (Comper *i*) will write the results it finds to a file `output_i`
       - Aggregate all quasi-cliques outputs into one file: `cat output_* > results`
       - Remove non-maximal quasi-cliques: `../maximal_check/quasiCliques results max_results`
 
