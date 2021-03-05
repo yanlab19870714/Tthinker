@@ -67,7 +67,7 @@ In each folder, `app_qc`, `app_kernel` and `maximal_check`, there is a Makefile.
 ## Demo
 Use the following link to run a quasi-cliques mining application using T-thinker in Google Colab jupyter file. Firstly, it clones the repo and download the needed files. Secondly, it runs the quasi-cliques application to find maximal results. Finally, it plots the first and second largest quasi-cliques.
 
-[Click here for the demo](https://shorturl.at/orFN2) 
+[Click here for the demo](https://colab.research.google.com/github/yanlab19870714/Tthinker/blob/main/demo/demo.ipynb) 
 
 ## Requirements
 
