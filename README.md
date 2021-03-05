@@ -49,12 +49,12 @@ In each folder, `app_qc`, `app_kernel` and `maximal_check`, there is a Makefile.
       - Remove non-maximal quasi-cliques: `maximal_check/quasiCliques results max_results`
 
 **Workflow B: to Mine Maximal Quasi-Cliques Using Kernels**
-  1. Mine large quasi-cliques by first mining dense parts that are faster to find using gamma', where gamma' > gamma, using `./run [input_data] [thread_num] `**`[gamma']`**` [min_size] [time_split_threshold]`
+  1. Mine large quasi-cliques by first mining dense parts that are faster to find using gamma', where gamma' > gamma, using `app_qc/run [input_data] [thread_num] `**`[gamma']`**` [min_size] [time_split_threshold]`
 
   2. Postprocessing: 
-      - Aggregate all quasi-cliques outputs into one file: ```cat output_* > result```
-      - Remove non-maximal quasi-cliques: ```../maximal_check/quasiCliques results max_results```
-      - Generate Kernels: ```sort -n -r -k 1 max_results > kernels```
+      - Aggregate all quasi-cliques outputs into one file: `cat output_* > result`
+      - Remove non-maximal quasi-cliques: `maximal_check/quasiCliques results max_results`
+      - Generate top-*k* Kernels: `sort -n -r -k 1 max_results > kernels`
 
   3. Kernel Expansion:
       - Using the generated kernels (Step 2 above) and the original values of gamma and min_size to expand the results, by selecting the largest k prime (k') kernels. Go to app_kernel folder, and run: ```./run [input_data] [thread_num] [gamma] [min_size] [time_split_threshold] [kernels] [k_prime]```
