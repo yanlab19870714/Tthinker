@@ -49,7 +49,7 @@ In each folder, `app_qc`, `app_kernel` and `maximal_check`, there is a Makefile.
       - Remove non-maximal quasi-cliques: `maximal_check/quasiCliques results max_results`
 
 **Workflow B: to Mine Maximal Quasi-Cliques Using Kernels**
-  1. Mine large quasi-cliques by first mining dense parts that are faster to find using gamma', where gamma' > gamma, using `./run [input_data] [thread_num] **[gamma']** [min_size] [time_split_threshold]`
+  1. Mine large quasi-cliques by first mining dense parts that are faster to find using gamma', where gamma' > gamma, using ```./run [input_data] [thread_num] **[gamma']** [min_size] [time_split_threshold]```
 
   2. Postprocessing: 
       - Aggregate all quasi-cliques outputs into one file: ```cat output_* > result```
