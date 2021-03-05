@@ -56,15 +56,15 @@ In each folder, `app_qc`, `app_kernel` and `maximal_check`, there is a Makefile.
       - Remove non-maximal quasi-cliques: `maximal_check/quasiCliques results max_results`
       - Generate top-*k* Kernels: `sort -n -r -k 1 max_results > kernels`
 
-  3. Kernel Expansion:
-      - Using the generated kernels (from Step 2 above) and the original values of gamma and min_size to expand the results, by selecting the largest *k'* kernels. Run the program in the `app_kernel` folder: `app_kernel/run [input_data] [thread_num] [gamma] [min_size] [time_split_threshold] [kernels] [k_prime]`
+  3. Kernel expansion:
+      - Using the generated kernels (from Step 2 above) and the original values of gamma and min_size to expand the results, by selecting the largest *k'* kernels. Run the program in the `app_kernel` folder: `app_kernel/run [input_data] [thread_num] [gamma] [min_size] [time_split_threshold] [kernels] `**`[k_prime]`**
       
-  4. Top *k* Kernels
-      - Aggregate all k' quasi-cliques outputs into one file: ```cat output_* > results_expanded```
-      - Remove non-maximal quasi-cliques: ```../maximal_check/quasiCliques results_expanded max_results_expanded```
-      - Generate top K Kernels: 
-        - ```sort -n -r -k 1 max_results_expanded > sorted```
-        - ```head -n k sorted > topk```
+  4. Top-*k* kernels
+      - Aggregate all quasi-clique outputs into one file: `cat output_* > results_expanded`
+      - Remove non-maximal quasi-cliques: `maximal_check/quasiCliques results_expanded max_results_expanded`
+      - Generate top-*k* Kernels: 
+        - `sort -n -r -k 1 max_results_expanded > sorted`
+        - `head -n k sorted > topk`
 
 ## Demo
 Click [here](https://colab.research.google.com/github/yanlab19870714/Tthinker/blob/main/demo/demo.ipynb) for a demo on Google Colab. The notebook first clones the repo and download the [Arxiv GR-QC](https://snap.stanford.edu/data/ca-GrQc.html) dataset. It then runs the quasi-clique mining program to find maximal results. Finally, it plots the first and second largest quasi-cliques.
