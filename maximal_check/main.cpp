@@ -20,7 +20,7 @@ void PrintSum(char* szgraph_file, int num_of_vertices);
 
 int main(int argc, char *argv[])
 {
-	int narg_no, num_of_vertices;
+	// int narg_no, num_of_vertices;
 
 	if(argc!=3)
 	{
