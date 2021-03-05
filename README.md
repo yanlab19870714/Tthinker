@@ -41,12 +41,12 @@ In each folder, `app_qc`, `app_kernel` and `maximal_check`, there is a Makefile.
         - min_size: minimum size threshold; each returned result should have at least so many vertices
         - time_split_threshold: timeout duration threshold. A task running longer than the threshold will decompose into subtasks 
 
-        Example: `./run input_graph 5 0.8 10 5`
+        Example: `app_qc/run input_graph 5 0.8 10 5`
 
   2. Postprocessing:
       - Each thread (Comper *i*) will write the results it finds to a file `output_i`
       - Aggregate all quasi-cliques outputs into one file: `cat output_* > results`
-      - Remove non-maximal quasi-cliques: `../maximal_check/quasiCliques results max_results`
+      - Remove non-maximal quasi-cliques: `maximal_check/quasiCliques results max_results`
 
 **Workflow B: to Mine Maximal Quasi-Cliques Using Kernels**
   1. Mine large quasi-cliques by first mining dense parts that are faster to find using gamma prime (gamma'), where gamma' > gamma, using ```./run [input_data] [thread_num] **[gamma']** [min_size] [time_split_threshold]```
