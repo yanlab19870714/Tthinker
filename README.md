@@ -65,9 +65,7 @@ In each folder, `app_qc`, `app_kernel` and `maximal_check`, there is a Makefile.
         - ```head -n k sorted > topk```
 
 ## Demo
-Use the following link to run a quasi-cliques mining application using T-thinker in Google Colab jupyter file. Firstly, it clones the repo and download the needed files. Secondly, it runs the quasi-cliques application to find maximal results. Finally, it plots the first and second largest quasi-cliques.
-
-[Click here for the demo](https://colab.research.google.com/github/yanlab19870714/Tthinker/blob/main/demo/demo.ipynb) 
+Click [here](https://colab.research.google.com/github/yanlab19870714/Tthinker/blob/main/demo/demo.ipynb) for a demo on Google Colab. The notebook first clones the repo and download the [Arxiv GR-QC](https://snap.stanford.edu/data/ca-GrQc.html) dataset. It then runs the quasi-clique mining program to find maximal results. Finally, it plots the first and second largest quasi-cliques.
 
 ## Requirements
 
