@@ -76,6 +76,4 @@ Click [here](https://colab.research.google.com/github/yanlab19870714/Tthinker/bl
 * **Jalal Khalil (jalalk@uab.edu)**
 * **Da Yan (yanda@uab.edu)**
 * **Guimu Guo (guimuguo@uab.edu)**
-
-The authors are with the Department of Computer Science,
-University of Alabama at Birmingham
+The authors are affiliated with the Department of Computer Science, University of Alabama at Birmingham
