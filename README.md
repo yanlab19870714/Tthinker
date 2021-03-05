@@ -57,8 +57,9 @@ In each folder, `app_qc`, `app_kernel` and `maximal_check`, there is a Makefile.
       - Generate top-*k* Kernels: `sort -n -r -k 1 max_results > kernels`
 
   3. Kernel Expansion:
-      - Using the generated kernels (Step 2 above) and the original values of gamma and min_size to expand the results, by selecting the largest k prime (k') kernels. Go to app_kernel folder, and run: ```./run [input_data] [thread_num] [gamma] [min_size] [time_split_threshold] [kernels] [k_prime]```
-  4. Top K Kernels
+      - Using the generated kernels (from Step 2 above) and the original values of gamma and min_size to expand the results, by selecting the largest *k'* kernels. Run the program in the `app_kernel` folder: `app_kernel/run [input_data] [thread_num] [gamma] [min_size] [time_split_threshold] [kernels] [k_prime]`
+      
+  4. Top *k* Kernels
       - Aggregate all k' quasi-cliques outputs into one file: ```cat output_* > results_expanded```
       - Remove non-maximal quasi-cliques: ```../maximal_check/quasiCliques results_expanded max_results_expanded```
       - Generate top K Kernels: 
