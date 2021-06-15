@@ -119,8 +119,8 @@ public:
     void add_bigTask(TaskT *task)
     {
         Qbig_mtx.lock();
-        // Check if spill is needed
-        if (Qbig->size() == Qbig_capacity)
+        // Check if spill is needed.
+        while (Qbig->size() >= Qbig_capacity)
         {
             spill_Qbig();
             Qbig_mtx.lock();
@@ -132,8 +132,7 @@ public:
     void add_regTask(TaskT *task)
     {
         Qreg_mtx.lock();
-        // Check if spill is needed.
-        if (Qreg->size() == Qreg_capacity)
+        while (Qreg->size() >= Qreg_capacity)
         {
             spill_Qreg();
             Qreg_mtx.lock();
