@@ -17,7 +17,7 @@ Previously, we developed a distributed solution which can be found [here](https:
 <img src="imgs/img2.PNG" width="450" height="300" />
 </p>
 
-- **The `app_qc` folder:** this is the application code for mining maximal quasi-cliques, which runs on top of T-thinker. The figure below shows an example of the second largest quasi-clique for the [Arxiv GR-QC](https://snap.stanford.edu/data/ca-GrQc.html) dataset (arXiv collaboration network) found by our application code.
+- **The `app_qc` folder:** this is the application code for mining maximal quasi-cliques, which runs on top of T-thinker. The figure below shows an example quasi-clique for the [Arxiv GR-QC](https://snap.stanford.edu/data/ca-GrQc.html) dataset (arXiv collaboration network) found by our application code.
 
 <p align="center">
 <img src="imgs/img1.PNG" width="450" height="300" />
